@@ -29,6 +29,7 @@ Route::post('user-update', [
 ]);
 Route::get('/user-list', 'User\UserController@user_list');
 Route::get('/user-edit/{id}', 'User\UserController@user_edit');
+Route::get('/user-delete/{id}', 'User\UserController@user_delete');
 //Route::post('/user-update', 'User\UserController@user_update');
 Route::get('/admin', 'Admin\AdminController@index');
 Route::get('/bands', 'Admin\BandsController@bands');

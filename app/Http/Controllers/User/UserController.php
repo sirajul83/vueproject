@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function showRegistarionForm()
     {
     	return view('user.registration');
@@ -72,6 +72,14 @@ class UserController extends Controller
         if($user_update)
         {
             return redirect('user-list');
+        }
+    }
+
+    public function user_delete($id)
+    {
+        $user_delete = User::where('id', $id)->delete();
+        if ($user_delete) {
+             return redirect('user-list');
         }
     }
 }
