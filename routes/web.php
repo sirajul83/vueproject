@@ -33,7 +33,11 @@ Route::get('/user-delete/{id}', 'User\UserController@user_delete');
 //Route::post('/user-update', 'User\UserController@user_update');
 Route::get('/admin', 'Admin\AdminController@index');
 Route::get('/bands', 'Admin\BandsController@bands');
-
+Route::post('/save-bands', 'Admin\BandsController@save_bands');
+Route::get('/category', 'Admin\CategoryController@category');
+Route::post('/category-save', 'Admin\CategoryController@save_category');
+Route::get('/product', 'Admin\ProductControlller@product');
+Route::post('/save-product', 'Admin\ProductControlller@save_product');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -1,10 +1,11 @@
 @extends('layouts.master')
 @section('title')
-  Bands
+  Category
 @endsection
 
 @section('main-content')
-      <form method="post">
+      <form action="{{ url('category-save')}}" method="post">
+         @csrf
       <div class="modal fade" id="modal-default">
          
           <div class="modal-dialog">
@@ -12,24 +13,31 @@
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Bands</h4>
+                <h4 class="modal-title">Category</h4>
               </div>
               <div class="modal-body">
                <div class="form-group">
                 <label>Name :</label>
-                <input name="name" id="name" type="text" class="form-control">
+                <input name="name" id="name" type="text" class="form-control @error('name') is-invalid @enderror" required="">
+                @error('name')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
               <div class="form-group">
                 <label>Status :</label>
-                <select name="status" id="status" class="form-control">
+                <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
+                  <option value="">Select</option>
                   <option value="1">Active</option>
                   <option value="2">In-active</option>
                 </select>
+                @error('status')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
               </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" id="submit" class="btn btn-primary">Save</button>
+                <button type="submit" id="" class="btn btn-primary">Save</button>
               </div>
             </div>
             <!-- /.modal-content -->
@@ -39,13 +47,13 @@
       </form>
         <!-- /.modal -->
 
-
+        
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Bands List</h3>
+              <h3 class="box-title">Category List</h3>
               <p style="color: green" id = 'msg'></p>
                <button style="float: right" type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
-                Add Bands
+                Add Category
               </button>
             </div>
 
@@ -62,7 +70,7 @@
                 </thead>
                 <tbody>
 
-                 @foreach($bands_data as $data)
+                 @foreach($category as $data)
                 <tr>
                   <td>1</td>
                   <td>{{ $data->name}}</td>

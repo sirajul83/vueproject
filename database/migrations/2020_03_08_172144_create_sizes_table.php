@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBandsTable extends Migration
+class CreateSizesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBandsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bands', function (Blueprint $table) {
+        Schema::create('sizes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('status');
@@ -28,6 +28,6 @@ class CreateBandsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bands');
+        Schema::dropIfExists('sizes');
     }
 }

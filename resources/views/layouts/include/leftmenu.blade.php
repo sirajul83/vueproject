@@ -36,6 +36,7 @@
         <li><a href="{{ url('category')}}"><i class="fa fa-book"></i> <span>Category</span></a></li>
         <li><a href="{{ url('color')}}"><i class="fa  fa-pie-chart"></i> <span>color</span></a></li>
         <li><a href="{{ url('size')}}"><i class="fa  fa-money"></i> <span>size</span></a></li>
+        <li><a href="{{ url('product')}}"><i class="fa fa-link"></i> <span>Product</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>Store</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>User</span>
