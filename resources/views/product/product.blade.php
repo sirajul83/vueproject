@@ -69,19 +69,32 @@
                <div class="col-md-6">
                  <div class="form-group">
                 <label> Color  : </label> 
-                <input type="checkbox" id="color" name="color[]" value="1">
+                <input type="checkbox" id="color" name="color[]" value="Black">
                  Black
-                <input type="checkbox" id="color" name="color[]" value="2">
+                <input type="checkbox" id="color" name="color[]" value="White">
                  White
-                <input type="checkbox" id="color" name="color[]" value="3">Blue
+                <input type="checkbox" id="color" name="color[]" value="Blue">Blue
                  <span style="color: red" id="color_error"></span>
               </div>
                </div>
                <div class="col-md-6">
                  <div class="form-group">
-               {{--  <label>Quantity :</label>
-                 <input name="quantity" id="quantity" type="text" class="form-control">
-                 <span style="color: red" id="quantity_error"></span> --}}
+                <label>Size :</label>
+                <div class="row">
+                  <div class="col-md-4">
+                    <input name="size[]" id="sizeM" type="text" class="form-control" placeholder="M">
+                  </div>
+                  <div class="col-md-4"> 
+                    <input name="size[]" id="sizeL" type="text" class="form-control" placeholder="L">
+                  </div>
+                  <div class="col-md-4"> 
+                    <input name="size[]" id="sizeXS" type="text" class="form-control" placeholder="XS">
+                  </div>
+                </div>
+                 
+                
+                
+                 <span style="color: red" id="size_error"></span>
               </div>
                </div>
              </div>

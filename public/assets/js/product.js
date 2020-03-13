@@ -27,6 +27,10 @@ function save_product()
 	var bands    = $("#bands").val();
 	var category = $("#category").val();
 
+	var size = $('input[name^=size]').map(function(idx, elem) {
+	    return $(elem).val();
+	  }).get();
+
 	var color = $("input[type=checkbox]");
 	var color_ids = Array();
 	for(var i = 0; i < color.length; i++){
@@ -98,7 +102,10 @@ function save_product()
 				                 name: name,
 				                 price: price,
 				                 quantity: quantity,
-				                 color_ids:color_ids
+				                 bands:bands,
+				                 category:category,
+				                 color_ids:color_ids,
+				                 size:size,
 				             },
 
 							 success: function(response) {

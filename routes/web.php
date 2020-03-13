@@ -38,6 +38,7 @@ Route::get('/category', 'Admin\CategoryController@category');
 Route::post('/category-save', 'Admin\CategoryController@save_category');
 Route::get('/product', 'Admin\ProductControlller@product');
 Route::post('/save-product', 'Admin\ProductControlller@save_product');
+Route::get('/serial', 'Admin\ProductControlller@serial');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
